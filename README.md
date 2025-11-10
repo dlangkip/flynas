@@ -1,6 +1,6 @@
 # Flight Booking Auto-Fill Userscript
 
-**Version:** 1.4  
+**Version:** 1.5  
 **Author:** Amos Kiprotich  
 **Website:** [https://dlang.benfex.net](https://dlang.benfex.net)  
 
