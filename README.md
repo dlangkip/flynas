@@ -50,7 +50,7 @@ It also allows manual confirmation and selecting the reason for travel. Group bo
 // ==UserScript==
 // @name         Flight Booking Auto-Fill
 // @namespace    https://dlang.benfex.net/
-// @version      1.4
+// @version      1.5
 // @description  Auto-fills one booking at a time
 // @match        https://crm.flynas.co.ke/bookings/create/new
 // @grant        GM_xmlhttpRequest
@@ -65,7 +65,7 @@ It also allows manual confirmation and selecting the reason for travel. Group bo
  const $ = window.jQuery;
 
  // ---------- Constants ----------
- const FLIGHT_TIME = '04:00 AM';
+ const FLIGHT_TIME = '04:00';
  const FLIGHT_DATE = '2025-10-03';
  const SALES_ORIGIN = 'Online';
  const DEFAULT_SEAT_TYPE = 'economy';
@@ -172,6 +172,9 @@ It also allows manual confirmation and selecting the reason for travel. Group bo
      $('#adminFee').val(booking.admin_fee || 0);
      $('#adminFeeDisplay').val(`$${(booking.admin_fee || 0).toFixed(2)}`);
      $('#totalPayable').val(totalAmount);
+
+     // Set default payment method
+     $('select[name="payment_method"]').val('bank_transfer').trigger('change');
  }
 
  // ---------- Main ----------
